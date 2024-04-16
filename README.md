@@ -23,7 +23,7 @@ Chaque projet a sa propre page dynamique et il y a également une interface d'ad
 - `backend/`: Contient le code source du backend.
 - `frontend/`: Contient le code source du frontend.
 - `README.md`: Ce fichier, contenant des informations sur le projet.
-- Autres fichiers et dossiers...
+- `LICENSE`: Fichier décrivant les conditions d'utilisation du projet.
 
 ## Installation et Utilisation
 
@@ -47,4 +47,6 @@ Ce projet a été développé par Corentin Renard.
 
 ## License
 
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+Tous droits réservés - Corentin Renard
+
+Vous êtes autorisé à consulter ce projet à des fins d'information uniquement. Vous n'êtes pas autorisé à utiliser, modifier, distribuer ou reproduire ce projet, en tout ou en partie, sans l'autorisation écrite préalable de M. Corentin Renard.
