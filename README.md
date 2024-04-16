@@ -1,35 +1,50 @@
-# Frontend de corentinrenard.com
+# corentinrenard.com
 
-Ce dossier contient le frontend de corentinrenard.com, une application développée avec React.js pour fournir une interface utilisateur dynamique et attrayante.
+Bienvenue dans le repository de corentinrenard.com, un site vitrine développé par Corentin Renard pour présenter son portfolio en tant que développeur.
 
-## Structure du dossier
+## Description du Projet
 
-- `src/`: Contient le code source de l'application frontend.
-  - `pages/`: Contient les composants qui représentent les différentes pages de l'application.
-  - `components/`: Contient les composants réutilisables utilisés à travers différentes pages.
-  - `assets/`: Contient les ressources telles que les images, les fichiers de style, etc.
-  - `App.js`: Composant racine de l'application.
-  - `index.js`: Point d'entrée de l'application React.
-- `public/`: Contient les fichiers statiques de l'application, comme le fichier HTML principal.
+corentinrenard.com est un site web professionnel développé avec les technologies suivantes :
 
-## Prérequis
+- Backend : Express.js et MongoDB
+- Frontend : React.js avec Sass
 
-Avant de démarrer le frontend, assurez-vous d'avoir Node.js installé sur votre machine.
+Le site comprend quatre pages principales :
 
-## Installation
+1. Page d'accueil
+2. Projets
+3. Compétences
+4. Contact
+
+Chaque projet a sa propre page dynamique et il y a également une interface d'administration pour publier de nouveaux projets.
+
+## Structure du Dossier
+
+- `backend/`: Contient le code source du backend.
+- `frontend/`: Contient le code source du frontend.
+- `README.md`: Ce fichier, contenant des informations sur le projet.
+- Autres fichiers et dossiers...
+
+## Installation et Utilisation
+
+Pour installer et utiliser le projet localement, suivez les instructions suivantes :
 
 1. Clonez ce dépôt sur votre machine locale.
-2. Accédez au dossier `frontend`.
-3. Exécutez `npm install` pour installer les dépendances.
-4. Exécutez `npm start` pour démarrer l'application.
+2. Installez les dépendances du backend en accédant au dossier `backend` et en exécutant `npm install`.
+3. Installez les dépendances du frontend en accédant au dossier `frontend` et en exécutant `npm install`.
+4. Configurez les informations de connexion à la base de données dans le fichier `config.js` du backend.
+5. Lancez le backend en accédant au dossier `backend` et en exécutant `npm start`.
+6. Lancez le frontend en accédant au dossier `frontend` et en exécutant `npm start`.
 
-## Points d'entrée de l'Application
+## Points d'Entrée
 
-- `/`: Page d'accueil.
-- `/projects`: Page des projets.
-- `/skills`: Page des compétences.
-- `/contact`: Page de contact.
+- Backend : `http://localhost:3001`
+- Frontend : `http://localhost:3000`
 
-## Contributions
+## Auteur
 
-Les contributions ne sont pas les bienvenues.
+Ce projet a été développé par Corentin Renard.
+
+## License
+
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
