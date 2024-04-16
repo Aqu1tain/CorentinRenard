@@ -31,4 +31,4 @@ Avant de démarrer le backend, assurez-vous d'avoir Node.js et MongoDB installé
 
 ## Contributions
 
-Les contributions sont les bienvenues ! Si vous souhaitez contribuer à l'amélioration de corentinrenard.com, n'hésitez pas à ouvrir une pull request.
+Les contributions ne sont pas les bienvenues.
