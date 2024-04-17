@@ -10,12 +10,25 @@ export default function Bubbles() {
     const numberOfBubbles = Math.ceil(pageHeight / 400);
     var precedentColor = Math.random() < 0.5 ? 'blue' : 'green';
     var precedentType = Math.random() < 0.5 ? '1' : '2';
+    var precedentAlignement = Math.random() < 0.5 ? 'left' : 'right';
     var precedentHeight = 0;
     for (let i = 0; i < numberOfBubbles; i++) {
-        bubbles.push(<Bubble key={i} color={precedentColor == 'blue' ? 'green' : 'blue'} type={precedentType == '1' ? '2' : '1'} top={precedentHeight+'px'} left={Math.random() * (window.innerWidth - 200) + 'px'} />);
-        precedentColor = precedentColor == 'blue' ? 'green' : 'blue';
-        precedentType = precedentType == '1' ? '2' : '1';
+        bubbles.push(
+            <Bubble
+                color={precedentColor === 'blue' ? 'green' : 'blue'}
+                type='2'
+                top={`${precedentHeight}px`}
+                style={{
+                    left: `${precedentAlignement === 'left' ? Math.random() * 70 + "px" : "undefined"}`,
+                    right: `${precedentAlignement === 'right' ? Math.random() * 70 + "px" : "undefined"}`
+                }}
+                
+            />
+        );
+        precedentColor = precedentColor === 'blue' ? 'green' : 'blue';
+        precedentType = precedentType === '1' ? '2' : '1';
         precedentHeight += 400;
+        precedentAlignement = precedentAlignement === 'left' ? 'right' : 'left';
     }
     return (
         <div className="bubbles" style={{overflow: 'hidden'}}>
