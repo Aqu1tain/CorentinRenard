@@ -1,0 +1,11 @@
+.bubble {
+    position: absolute;
+    z-index: 0;
+}
+.bubble-1 {
+    /*Layer Blur*/
+    filter: blur(3px);
+}
+.bubble-2 {
+    filter :blur(100px)
+}

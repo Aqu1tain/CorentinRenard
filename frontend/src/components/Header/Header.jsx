@@ -11,7 +11,7 @@ export default function Header() {
             <h2>Corentin Renard</h2>
             <nav>
                 <ul>
-                    <li><Link to="/" className='active'>Accueil</Link></li>
+                    <li><Link to="/" id='active'>Accueil</Link></li>
                     <li><Link to="/projects">Portfolio</Link></li>
                     <li><Link to="/skills">Compétences</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
