@@ -1,4 +1,13 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+
 .header {
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,6 +15,7 @@
     color : white;
     h2 {
         margin : 0;
+        font-weight: 400;
     }
     nav {
         ul {
@@ -21,7 +31,7 @@
                     text-decoration: none;
                     text-align: center;
                     padding: 14px 16px;
-                    
+                    font-weight: 300;                 
                 }
             }
         }
