@@ -4,7 +4,8 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Welcome from '../../components/Welcome/Welcome';
 import Bubbles from '../../components/Bubbles/Bubbles';
-
+import About from '../../components/About/About';
+import Lastprojects from '../../components/Lastprojects/Lastprojects';
 import './Home.scss';
 
 export default function Home() {
@@ -12,6 +13,8 @@ export default function Home() {
         <>
             <Header />
             <Welcome />
+            <About />
+            <Lastprojects />
             <Bubbles />
         </>
     );
