@@ -1,0 +1,31 @@
+.technos-container {
+    margin-top : 30px;
+    display: flex;
+    flex-direction: row;
+    // Add padding between images
+    .techno {
+        height : 70px;
+        width : 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .techno-inner {
+            display: flex;
+            width: 70%;
+            height: 70%;
+            background-color: #354153;
+            border-radius: 25px;
+            justify-content: center;
+            align-items: center;
+            img {
+
+                height : 60%;
+                width : 60%;
+            }
+        }
+        .techno-inner:hover {
+            cursor: pointer;
+            background-color: white;
+        }
+    }
+}

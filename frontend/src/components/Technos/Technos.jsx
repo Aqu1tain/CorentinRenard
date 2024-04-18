@@ -1,17 +1,29 @@
 import React from 'react';
 
-export default function Technos() {
-    return (
-        <div className="technos">
-            <h3>Technos</h3>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>PHP</li>
-                <li>MySQL</li>
-            </ul>
+import './Technos.scss';
+
+export default function Technos({ technos }) {
+  return (
+    <div className="technos-container">
+      {technos.map(techno => (
+        <div className='techno'>
+            <div
+            className="techno-inner"
+            onMouseEnter={() =>
+                (document.querySelector(`#${techno}-img`).src = require(`../../assets/svgs/${techno}2.svg`))
+            }
+            onMouseLeave={() =>
+                (document.querySelector(`#${techno}-img`).src = require(`../../assets/svgs/${techno}1.svg`))
+            }
+            >
+            <img
+                id={`${techno}-img`}
+                src={require(`../../assets/svgs/${techno}1.svg`)}
+                alt={techno}
+            />
+            </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
