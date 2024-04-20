@@ -18,7 +18,7 @@ export default function Lastprojects() {
             <h1 className="title">Derniers projets</h1> {/* The title of the section */}
             <ul className="projects-list"> {/* The unordered list of projects */}
                 {projects
-                    .slice(-3) // Keep only the 3 most recent projects
+                    .slice(-2) // Keep only the 2 most recent projects
                     .map(project => ( // Map over the projects and render a list item for each one
                         <li key={project._id} className="project"> {/* The wrapper for each project, with a unique key */}
                             <h2 className="project-title">{project.title}</h2> {/* The title of the project */}

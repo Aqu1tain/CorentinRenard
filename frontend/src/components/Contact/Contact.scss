@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+.contact form {
+    background: rgba(128, 179, 179, 0.45);
+    backdrop-filter: blur(4px);
+    border-radius: 25px;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.22);
+    margin: 20% 30%;
+    margin-top: 50px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .input-field {
+        position: relative;
+        margin: 15px 0;
+
+        input, textarea {
+            background: transparent;
+            border: none;
+            font-family: "Outfit", Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #fff;
+            outline: none;
+            width: 100%;
+            height: 40px;
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 16px;
+            pointer-events: none;
+            transition: 0.15s ease;
+        }
+
+        input:focus ~ label,
+        input:valid ~ label {
+            top: -5px;
+            font-size: 12px;
+        }
+    }
+
+    select {
+        background-color: inherit;
+        backdrop-filter: blur(4px);
+        color: white;
+        border: none;
+        padding: 15px 10px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .message label {
+        top: 15px;
+    }
+
+    .message textarea {
+        height: 100px;
+        resize: none;
+    }
+
+    .message textarea:focus ~ label,
+    .message textarea:valid ~ label {
+        top: -5px;
+        font-size: 12px;
+    }
+}
+
+.title {
+    font-family: "Outfit";
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 20%;
+}
+

@@ -26,6 +26,14 @@
         .techno-inner:hover {
             cursor: pointer;
             background-color: white;
+            box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
+        }
+        .techno-inner:active {
+            transform: scale(.9);
+        }
+
+        .techno-inner img {
+            user-select: none;
         }
     }
 }

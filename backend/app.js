@@ -2,8 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Post = require('./models/Post');
+const nodemailer = require('nodemailer');
 
 const app = express();
+const transporter = nodemailer.createTransport({
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "3c3c3ab1465883",
+    pass: "07d8567b67c35f"
+  }
+});
 
 // Utilisation du middleware CORS pour autoriser les requêtes provenant de tous les domaines
 app.use(cors({
@@ -65,8 +74,31 @@ app.put('/api/posts/:id', async (req, res) => {
   }
 })
 
+//route pour envoyer un mail
+app.post('/api/send-email', async (req, res) => {
+  const { name, lastName, email, subject, message } = req.body;
+
+  const mailOptions = {
+    from: `"${name} ${lastName}" <${email}>`,
+    to: 'corentinfox08@gmail.com',
+    subject: subject === 'dont know yet' ? ['webdesign', 'webdev'] : subject,
+    text: message
+  }
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Email envoyé avec succès' });
+  } catch (error) {
+    const errorMessage = error.response ? await error.response.text() : error.message;
+    console.error('Erreur lors de l\'envoi de l\'email :', errorMessage);
+    res.status(500).json({ error: 'Erreur lors de l\'envoi de l\'email.' });
+  }
+})
+
+
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Serveur Express lancé sur le port ${port}`);
 });
+
 
