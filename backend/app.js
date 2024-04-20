@@ -43,6 +43,28 @@ app.get('/api/posts', async (req, res) => {
   }
 });
 
+// Route pour supprimer un post
+app.delete('/api/posts/:id', async (req, res) => {
+  try {
+    await Post.findByIdAndDelete(req.params.id);
+    res.status(204).json({ message: 'Post supprimé avec succès.' });
+  } catch (error) {
+    console.error('Erreur lors de la suppression du post :', error);
+    res.status(500).json({ error: 'Erreur lors de la suppression du post.' });
+  }
+})
+
+//route pour modifier un post
+app.put('/api/posts/:id', async (req, res) => {
+  try {
+    const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.status(200).json({ message: 'Post mis à jour avec succès.', post });
+  } catch (error) {
+    console.error('Erreur lors de la mise à jour du post :', error);
+    res.status(500).json({ error: 'Erreur lors de la mise à jour du post.' });
+  }
+})
+
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Serveur Express lancé sur le port ${port}`);

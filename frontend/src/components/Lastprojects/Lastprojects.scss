@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+.lastprojects {
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin: 5%;
+    position: relative;
+    z-index: 5;
+
+    .title {
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .projects-list {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        width : 100%;
+        .project {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 330px;
+            height: 180px;
+            margin: 0 20px 20px;
+            padding: 70px;
+            border-radius: 23px;
+            position: relative;
+
+            .project-title {
+                margin : 0;
+                color: white;
+                mix-blend-mode: overlay;
+                text-align: center;
+                font: 400 40px/1.2 "Outfit", Arial, Helvetica, sans-serif;
+            }
+
+            .project-content {
+                margin : 0;
+                color: white;
+                mix-blend-mode: overlay;
+                font: 300 16px/1.5 "Outfit", Arial, Helvetica, sans-serif;
+            }
+
+            button {
+                margin-top: 20px;
+                background-color: rgb(255 255 255 / 36%);
+                mix-blend-mode: overlay;
+                width : fit-content;
+                p {
+                    color: white;
+                    margin: 0;
+                }
+            }
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 15px 2px rgb(0 0 0 / 22%);
+            background: linear-gradient(125deg, rgba(193, 255, 255, 0.61) 0, rgba(193, 255, 255, 0) 100%);
+            backdrop-filter: blur(15.050000190734863px);
+        }
+    }
+}

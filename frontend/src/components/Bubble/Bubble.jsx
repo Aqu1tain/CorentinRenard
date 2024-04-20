@@ -11,9 +11,9 @@ export default function Bubble(props) {
     const type = props.type || '1';
     var color;
     if (props.color === 'blue') {
-        color = "#59A4D0"
+        color = "rgb(89 164 208 / 38%)"
     } else {
-        color = "#4ABDAC"
+        color = "rgb(74 189 172 / 38%)"
     }
     return (
         <div 
