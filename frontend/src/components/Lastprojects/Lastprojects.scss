@@ -11,8 +11,6 @@
     color: white;
     margin: 5%;
     position: relative;
-    z-index: 5;
-
     .title {
         font-size: 50px;
         font-weight: 500;
@@ -57,10 +55,17 @@
 
             button {
                 margin-top: 20px;
-                background-color: rgb(255 255 255 / 36%);
+                background-color: rgb(169, 169, 169);
                 mix-blend-mode: overlay;
                 width : fit-content;
+                transition: background-color 0.3s ease;
+
+                &:hover, &:active {
+                    background-color: #c7c7c7;
+                }
+
                 p {
+                    mix-blend-mode: overlay;
                     color: white;
                     margin: 0;
                 }
