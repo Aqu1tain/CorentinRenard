@@ -1,0 +1,26 @@
+.skill-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .choices {
+        display: flex;
+        gap: 10px;
+
+        .choice {
+            cursor: pointer;
+            padding: 10px;
+            background-color: var(--background);
+            border-radius: 2px;
+
+            p {
+                margin: 0;
+            }
+
+            &.active {
+                background-color: white;
+            }
+        }
+    }
+}
+

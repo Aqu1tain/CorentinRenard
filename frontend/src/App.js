@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/Home/Home';
+import Skills from './pages/Skills/Skills';
 
 import { ThemeContext } from './theme';
 
@@ -21,6 +22,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
+          <Route path="/skills" element ={<Skills />} />
         </Routes>
       </Router>
     </div>
