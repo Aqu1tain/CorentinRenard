@@ -1,1 +1,26 @@
-/* App.css */
+:root {
+    --dark-blue : #0D1B2A;
+    --light-yellow : #F4EFDE;
+
+    --dark-text : #E2EBF1;
+    --light-text : #000000;
+}
+
+.light-theme {
+    --background : var(--light-yellow);
+    --text : var(--light-text)
+}
+
+.dark-theme {
+    --background : var(--dark-blue);
+    --text : var(--dark-text)
+}
+
+.app {
+    height: 100vh;
+    background-color: var(--background);
+    color: var(--text);
+    a {
+        color: var(--text);
+    }
+}

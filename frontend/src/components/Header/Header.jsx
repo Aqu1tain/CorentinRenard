@@ -4,18 +4,19 @@ import {
 } from "react-router-dom";
 
 import './Header.scss';
+import ModeSwitch from '../ModeSwitch/ModeSwitch';
 
 export default function Header() {
     return (
         <div className="header">
-            <h2>Corentin Renard</h2>
+            <h2><Link to="/">Corentin Renard</Link></h2>
             <nav>
-                <ul>
-                    <li><Link to="/" id='active'>Accueil</Link></li>
-                    <li><Link to="/projects">Portfolio</Link></li>
+                <ul>                    
                     <li><Link to="/skills">Compétences</Link></li>
+                    <li><Link to="/projects">Projets</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>
+                <ModeSwitch />
             </nav>
 
         </div>

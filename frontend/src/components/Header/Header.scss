@@ -12,12 +12,20 @@
     justify-content: space-between;
     align-items: center;
     margin : 30px 56px;
-    color : white;
     h2 {
         margin : 0;
         font-weight: 400;
+        a {
+            text-decoration: none;
+        }
     }
     nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        img {
+            margin-top: 5px;
+        }
         ul {
             list-style-type: none;
             margin: 0;
@@ -27,7 +35,6 @@
                 float: left;
                 a {
                     display: block;
-                    color: white;
                     text-decoration: none;
                     text-align: center;
                     padding: 14px 16px;
@@ -38,6 +45,6 @@
     }
 }
 a#active {
-    text-decoration: underline white 1px;
+    text-decoration: underline var(--text) 1px;
     text-underline-offset: 3px;
 }

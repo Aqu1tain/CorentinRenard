@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+.co-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    transition: 300ms ease-in-out;
+    width: fit-content;
+    text-decoration: none;
+    margin-top : 38px;
+
+    span {
+        font-family: "Outfit";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-top: 0.3125rem;
+        margin-bottom: 0.3125rem;
+        
+    }
+
+    #Vector {
+        stroke: var(--text);
+    }
+    &:hover {
+        gap: 30px;
+    }
+} 
