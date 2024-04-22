@@ -68,10 +68,12 @@
                 width: 70px;
                 cursor : pointer;
                 transition: transform 0.1s ease-in-out;
-                &:hover,
-                &.focus {
+                &:hover {
                     transform: scale(1.1);
                 }
+            }
+            .focus img {
+                transform: scale(1.1);
             }
         }
         .explanation {

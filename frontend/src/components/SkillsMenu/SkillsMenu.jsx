@@ -173,28 +173,28 @@ const SkillsMenu = () => {
                     <ul>
                         {(selectedList === 'designer') && (
                             <>
-                                <li>
+                                <li className={selectedImage === 'Photoshop' ? 'focus' : ''}>
                                     <img
                                         src={Photoshop}
                                         alt="Photoshop"
                                         onClick={() => handleImageClick('Photoshop')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'Illustrator' ? 'focus' : ''}>
                                     <img 
                                         src={Illustrator}
                                         alt="Illustrator"
                                         onClick={() => handleImageClick('Illustrator')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'Figma' ? 'focus' : ''}>
                                     <img 
                                         src={Figma}
                                         alt="Figma"
                                         onClick={() => handleImageClick('Figma')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'Penpaper' ? 'focus' : ''}>
                                     <img 
                                         src={Penpaper}
                                         alt="Crayon à papier"
@@ -205,42 +205,42 @@ const SkillsMenu = () => {
                         )}
                         {(selectedList === 'backend') && (
                             <>
-                                <li>
+                                <li className={selectedImage === 'Nodejs' ? 'focus' : ''}>
                                     <img 
                                         src={Nodejs}
                                         alt="Node.js"
                                         onClick={() => handleImageClick('Nodejs')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'MongoDB' ? 'focus' : ''}>
                                     <img 
                                         src={MongoDB}
                                         alt="MongoDB"
                                         onClick={() => handleImageClick('MongoDB')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'Mysql' ? 'focus' : ''}>
                                     <img 
                                         src={Mysql}
                                         alt="MySQL"
                                         onClick={() => handleImageClick('Mysql')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'python' ? 'focus' : ''}>
                                     <img 
                                         src={python}
                                         alt="Python"
                                         onClick={() => handleImageClick('python')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'Php' ? 'focus' : ''}>
                                     <img 
                                         src={Php}
                                         alt="PHP"
                                         onClick={() => handleImageClick('Php')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'express' ? 'focus' : ''}>
                                     <img 
                                         src={express}
                                         alt="Express.js"
@@ -251,35 +251,35 @@ const SkillsMenu = () => {
                         )}
                         {(selectedList === 'frontend') && (
                             <>
-                                <li>
+                                <li className={selectedImage === 'Reactjs' ? 'focus' : ''}>
                                     <img 
                                         src={Reactjs}
                                         alt="React.js"
                                         onClick={() => handleImageClick('Reactjs')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'Sass' ? 'focus' : ''}>
                                     <img 
                                         src={Sass}
                                         alt="Sass"
                                         onClick={() => handleImageClick('Sass')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'HTML' ? 'focus' : ''}>
                                     <img 
                                         src={HTML}
                                         alt="Html"
                                         onClick={() => handleImageClick('HTML')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'CSS' ? 'focus' : ''}>
                                     <img 
                                         src={CSS}
                                         alt="CSS"
                                         onClick={() => handleImageClick('CSS')}
                                     />
                                 </li>
-                                <li>
+                                <li className={selectedImage === 'Javascript' ? 'focus' : ''}>
                                     <img 
                                         src={Javascript}
                                         alt="Javascript"
