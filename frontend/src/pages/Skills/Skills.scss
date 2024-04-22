@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+.skillspage {
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+    .skills {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 65vw;
+        height: 80vh;
+
+        h1 {
+            font-size: 50px;
+            font-weight: 500;
+            font-family: "Outfit", Arial, Helvetica, sans-serif;
+        }
+
+    }
+}

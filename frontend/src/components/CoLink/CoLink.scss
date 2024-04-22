@@ -28,5 +28,8 @@
     }
     &:hover {
         gap: 30px;
+        span {
+            text-decoration-line: underline;
+        }
     }
 } 

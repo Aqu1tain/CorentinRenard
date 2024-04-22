@@ -1,19 +1,28 @@
 :root {
-    --dark-blue : #0D1B2A;
-    --light-yellow : #F4EFDE;
-
     --dark-text : #E2EBF1;
+    --dark-blue : #0D1B2A;
+    --dark-light-blue : #193552;
+    --dark-dark-blue : #010304;
+
     --light-text : #000000;
+    --light-yellow : #f4eedd;
+    --light-light-yellow : #f9f6ec;
+    --light-dark-yellow : #e7dbb6;
+
 }
 
 .light-theme {
     --background : var(--light-yellow);
-    --text : var(--light-text)
+    --text : var(--light-text);
+    --bg-lighter : var(--light-light-yellow);
+    --bg-darker : var(--light-dark-yellow);
 }
 
 .dark-theme {
     --background : var(--dark-blue);
-    --text : var(--dark-text)
+    --text : var(--dark-text);
+    --bg-lighter : var(--dark-light-blue);
+    --bg-darker : var(--dark-dark-blue);
 }
 
 .app {
