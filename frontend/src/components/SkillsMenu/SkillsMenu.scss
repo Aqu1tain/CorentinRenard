@@ -24,13 +24,12 @@
                 border-radius: 20px 20px 0px 0px;
                 background: var(--Background);
 
-                /* Neumorph-Int */
-                box-shadow: -2px -2px 5px 0px var(--bg-lighter) inset, 2px 2px 5px 0px var(--bg-darker) inset;
-
                 p {
-                    margin: 0;
+                    margin: 9px 11px;
                 }
 
+                /* Neumorph-Int */
+                box-shadow: -2px -2px 5px 0px var(--bg-lighter) inset, 2px 2px 5px 0px var(--bg-darker) inset;
                 &.active {
                     z-index: 2;
                     border-radius: 20px 20px 0px 0px;

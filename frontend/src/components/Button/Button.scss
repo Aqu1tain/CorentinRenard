@@ -1,10 +1,9 @@
 .button {
-    background-color: #4ABDAC;
+    background-color: var(--background);
     border: none;
     color: white;
     padding: 15px 32px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    border-radius: 10px;
 }

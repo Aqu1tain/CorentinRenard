@@ -46,6 +46,7 @@ app.get('/api/posts', async (req, res) => {
   try {
     const posts = await Post.find();
     res.status(200).json(posts);
+    console.log("Requete recue : ", posts);
   } catch (error) {
     console.error('Erreur lors de la récupération des posts :', error);
     res.status(500).json({ error: 'Erreur lors de la récupération des posts.' });

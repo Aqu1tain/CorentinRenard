@@ -38,12 +38,12 @@ export default function Contact() {
         <h1 className="title">Me contacter</h1>
         <form onSubmit={handleSubmit}>
             <div className="input-field">
-                <input required type="text" value={name} onChange={(event) => setName(event.target.value)} />
-                <label>Nom</label>
-            </div>
-            <div className="input-field">
                 <input required type="text" value={lastName} onChange={(event) => setLastName(event.target.value)} />
                 <label>Prénom</label>
+            </div>
+            <div className="input-field">
+                <input required type="text" value={name} onChange={(event) => setName(event.target.value)} />
+                <label>Nom</label>
             </div>
             <div className="input-field">
                 <input required type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
