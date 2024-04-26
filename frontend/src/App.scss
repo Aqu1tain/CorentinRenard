@@ -3,11 +3,13 @@
     --dark-blue : #0D1B2A;
     --dark-light-blue : #193552;
     --dark-dark-blue : #010304;
+    --dark-text-accent : #91999f;
 
     --light-text : #000000;
     --light-yellow : #f4eedd;
     --light-light-yellow : #f9f6ec;
     --light-dark-yellow : #e7dbb6;
+    --light-text-accent : #736c5a;
 
 }
 
@@ -16,6 +18,7 @@
     --text : var(--light-text);
     --bg-lighter : var(--light-light-yellow);
     --bg-darker : var(--light-dark-yellow);
+    --textaccent : var(--light-text-accent);
 }
 
 .dark-theme {
@@ -23,6 +26,7 @@
     --text : var(--dark-text);
     --bg-lighter : var(--dark-light-blue);
     --bg-darker : var(--dark-dark-blue);
+    --textaccent : var(--dark-text-accent);
 }
 
 .app {

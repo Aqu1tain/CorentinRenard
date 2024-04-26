@@ -3,12 +3,38 @@
     src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
 }
 .contact {
-    padding: 0 30%;
+    $frame-padding : 15px;
+    margin: 0 35%;
+    padding: 40px;
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 2px solid var(--textaccent);
+        pointer-events: none;
+    }
+    &:before {
+        right: $frame-padding;
+        left: $frame-padding;
+        border-top: none;
+        border-bottom: none;
+    }
+    &:after {
+        top: $frame-padding;
+        bottom: $frame-padding;
+        border-left: none;
+        border-right: none;
+    }
 }
 
 .contact form {
     background: var(--background);
-    margin-top: 50px;
+    margin-top: 13px;
     display: flex;
     flex-direction: column;
 
@@ -78,5 +104,6 @@
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 20px;
+    margin-top: 5px;
 }
 

@@ -1,9 +1,59 @@
 .button {
-    background-color: var(--background);
-    border: none;
-    color: white;
-    padding: 15px 32px;
+    $btn-width: 520px !default;
+    $btn-height: 50px !default;
+    $btn-full: $btn-height+$btn-width !default;
+    $btn-half: $btn-full/2 !default;
+    $bg-color: #eeeeee !default;
+
+    position: relative;
+    align-self: center;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: $btn-height;
+    max-width: $btn-width;
+    text-transform: uppercase;
+    border: 2px solid currentColor;
+    color: var(--text);
+    background-color: var(--background);
+
+    span {
+        position: relative;
+        z-index: 1;
+        color: var(--text);
+        transition: color .4s ease-out;
+    }
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: transform 0.3s ease-out;
+    }
+
+    &:before {
+        right: -50px;
+        border-right: 50px solid transparent;
+        border-bottom: $btn-height solid var(--text);
+        transform: translateX(-100%);
+    }
+
+    &:after {
+        left: -50px;
+        border-left: 50px solid transparent;
+        border-top: $btn-height solid var(--text);
+        transform: translateX(100%);
+    }
+
+    &:hover {
+        &:before { transform: translateX(-49%); }
+        &:after { transform: translateX(49%); }
+        span {
+            color: var(--background);
+        }
+    }
 }

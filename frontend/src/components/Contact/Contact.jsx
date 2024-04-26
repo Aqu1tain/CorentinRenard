@@ -35,31 +35,31 @@ export default function Contact() {
 
     return (
         <div className="contact">
-        <h1 className="title">Me contacter</h1>
-        <form onSubmit={handleSubmit}>
-            <div className="input-field">
-                <input required type="text" value={lastName} onChange={(event) => setLastName(event.target.value)} />
-                <label>Prénom</label>
-            </div>
-            <div className="input-field">
-                <input required type="text" value={name} onChange={(event) => setName(event.target.value)} />
-                <label>Nom</label>
-            </div>
-            <div className="input-field">
-                <input required type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
-                <label>Adresse email</label>
-            </div>
-            <select value={subject} onChange={(event) => setSubject(event.target.value)}>
-                <option value="webdesign">Webdesign</option>
-                <option value="webdev">Développement web</option>
-                <option value="dont know yet">Je ne sais pas encore</option>
-            </select>
-            <div className="input-field message">
-                <textarea value={message} minLength="1" required onChange={(event) => setMessage(event.target.value)} />
-                <label>Message</label>
-            </div>
-            <Button type="submit">Envoyer</Button>
-        </form>
+            <h1 className="title">Me contacter</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="input-field">
+                    <input required type="text" value={lastName} onChange={(event) => setLastName(event.target.value)} />
+                    <label>Prénom</label>
+                </div>
+                <div className="input-field">
+                    <input required type="text" value={name} onChange={(event) => setName(event.target.value)} />
+                    <label>Nom</label>
+                </div>
+                <div className="input-field">
+                    <input required type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <label>Adresse email</label>
+                </div>
+                <select value={subject} onChange={(event) => setSubject(event.target.value)}>
+                    <option value="webdesign">Webdesign</option>
+                    <option value="webdev">Développement web</option>
+                    <option value="dont know yet">Je ne sais pas encore</option>
+                </select>
+                <div className="input-field message">
+                    <textarea value={message} minLength="1" required onChange={(event) => setMessage(event.target.value)} />
+                    <label>Message</label>
+                </div>
+                <Button type="submit">Envoyer</Button>
+            </form>
         </div>
     )
 }
