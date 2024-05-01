@@ -166,6 +166,7 @@ const SkillsMenu = () => {
                         </p>
                     </div>
                 </div>
+                <div className='filler' />
             </div>
             
             <div className={`skill-list ${selectedList}`}>

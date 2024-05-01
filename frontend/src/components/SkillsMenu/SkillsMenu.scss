@@ -9,6 +9,11 @@
         flex-direction: row;
         position: relative;
         z-index: 1;
+        .filler {
+            flex: 1;
+            border-bottom: 2px solid var(--textaccent);
+            border-radius: none;
+        }
         .cache {
             
             padding-top: 8px;
@@ -20,26 +25,20 @@
                 cursor: pointer;
                 padding: 10px;
                 background-color: var(--background);
-                border-radius: 2px;
-                border-radius: 20px 20px 0px 0px;
                 background: var(--Background);
-
+                border-bottom: 2px solid var(--textaccent);
+                border
                 p {
                     margin: 9px 11px;
                 }
 
-                /* Neumorph-Int */
-                box-shadow: -2px -2px 5px 0px var(--bg-lighter) inset, 2px 2px 5px 0px var(--bg-darker) inset;
                 &.active {
                     z-index: 2;
-                    border-radius: 20px 20px 0px 0px;
+                    border: 2px solid var(--textaccent);
+                    border-bottom: none;
                     background: var(--Background);
-
-                    /* Neumorph-Ext */
-                    box-shadow: -4px -4px 10px 0px var(--bg-lighter), 4px 4px 10px 0px var(--bg-darker);
                 }
             }
-        
         }
     }
     .skill-list {
@@ -48,9 +47,8 @@
         justify-content: center;
         align-items: flex-start;
         height: 257px;
-        border-radius: 0px 20px 20px 20px;
-        background: var(--Background);
-        box-shadow: -4px 0 10px -3px var(--bg-lighter), 4px 4px 10px 0px var(--bg-darker);
+        border : 2px solid var(--textaccent);
+        border-top: none;
         .technos {
             padding: 20px;
             height: 100%;
