@@ -5,6 +5,19 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  textid: {
+    type: String,
+    required: true
+  },
+  imageUrl: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+
   sitetype: {
     type: String,
     required: true

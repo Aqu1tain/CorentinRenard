@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+.projetscompo {
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap : 20px;
+    .project {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        border: 2px solid var(--textaccent);
+        padding : 30px;
+        .project-title {
+            margin : 0;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 30px;
+        }
+        .project-sitetype {
+            margin : 0;
+            color: var(--text);
+            font-weight: 300;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        a.co-link {
+            span {
+                color: var(--text);
+                font-size: 16px;
+            }
+            svg {
+                width: 20px;
+                height: 17px;
+            }
+            &:hover + .mouse-follower {
+                display: block;
+            }
+        }
+        .mouse-follower {
+            display: none;
+            position: fixed;
+            pointer-events: none;
+            width: 200px;
+            height: auto;
+            /* A lil bit transparent */
+            opacity: .7;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+        }
+    }
+}
+

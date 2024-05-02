@@ -19,9 +19,9 @@ export default function Socials() {
   return (
     <div className="socials">
       <a href="https://www.linkedin.com/in/corentin-renard-894253256/" target='_blank'><img src={theme === "light-theme" ? LinkedinLight : LinkedinDark} alt="linkedin logo" className="light" /></a>
-      <a href="" target='_blank'><img src={theme === "light-theme" ? GithubLight : GithubDark} alt="github logo" className="light" /></a>
-      <a href="" target='_blank'><img src={theme === "light-theme" ? InstagramLight : InstagramDark} alt="instagram logo" className="light" /></a>
-      <a href="" target='_blank'><img src={theme === "light-theme" ? MailLight : MailDark} alt="mail logo" className="light" /></a>
+      <a href="https://github.com/Aqu1tain" target='_blank'><img src={theme === "light-theme" ? GithubLight : GithubDark} alt="github logo" className="light" /></a>
+      <a href="https://www.instagram.com/corentin_fox/" target='_blank'><img src={theme === "light-theme" ? InstagramLight : InstagramDark} alt="instagram logo" className="light" /></a>
+      <a href="mailto:contact@corentinrenard.com" target='_blank'><img src={theme === "light-theme" ? MailLight : MailDark} alt="mail logo" className="light" /></a>
     </div>
   );
 }
