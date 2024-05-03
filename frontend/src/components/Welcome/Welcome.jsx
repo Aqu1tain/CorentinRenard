@@ -12,9 +12,12 @@ export default function Welcome() {
             .fromTo('.presentation h1', { y: '50%', opacity: 0 }, { y: '0%', opacity: 1, duration: 1.3, ease: 'power2.out' }, '-=1')
             .fromTo('.presentation p', { y: '50%', opacity: 0 }, { y: '0%', opacity: 1, duration: 1.3, ease: 'power2.out' }, '-=1')
             .fromTo('.presentation a', { y: '50%', opacity: 0 }, { y: '0%', opacity: 1, duration: 1.3, ease: 'power2.out' }, '-=1')
-            .fromTo('.presentation .social-links', { y: '50%', opacity: 0 }, { y: '0%', opacity: 1, duration: 1.3, ease: 'power2.out' }, '-=1');
+            .fromTo('.presentation .social-links', { y: '50%', opacity: 0 }, { y: '0%', opacity: 1, duration: 1.3, ease: 'power2.out' }, '-=1')
+            .set('.co-link', { transition: '0.5s' }, '-=0.2');
     }, []);
 
+    
+    
     return (
         <div className="welcome">
             <div className='presentation'>
@@ -29,3 +32,5 @@ export default function Welcome() {
         </div>
     );
 }
+
+

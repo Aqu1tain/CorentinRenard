@@ -12,6 +12,7 @@ import Home from './pages/Home/Home';
 import Skills from './pages/Skills/Skills';
 import ContactPage from './pages/ContactPage/ContactPage';
 import Projets from './pages/Projets/Projets';
+import Aboutme from './pages/AboutmePage/Aboutme';
 
 import { ThemeContext } from './theme';
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/skills" element ={<Skills />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/projects" element={<Projets />} />
+          <Route path="/about" element={<Aboutme />} />
         </Routes>
       </Router>
     </div>

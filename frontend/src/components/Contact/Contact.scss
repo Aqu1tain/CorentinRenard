@@ -5,7 +5,7 @@
 .contact {
     $frame-padding : 15px;
     position: absolute;
-    width: 30vw;
+    width: fit-content;
     padding: 40px;
     &:before,
     &:after {
@@ -37,6 +37,8 @@
     margin-top: 13px;
     display: flex;
     flex-direction: column;
+    max-width: 520px;
+    width: 25vw;
 
     .input-field {
         position: relative;
