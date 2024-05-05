@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { gsap } from 'gsap';
 
 import './SkillsMenu.scss';
 
@@ -95,11 +96,6 @@ const imageDetails = {
         p: 'MySQL est un système de gestion de base de données relationnelle open source. Il est largement utilisé pour stocker et gérer des données dans de nombreuses applications Web et logiciels.',
         link: 'https://www.mysql.com/',
     },
-    express: {
-        title: 'Express.js',
-        p: 'Express.js est un cadre d\'application Web Node.js minimal et flexible qui fournit un ensemble robuste de fonctionnalités pour développer des applications Web et des API.',
-        link: 'https://expressjs.com/fr/',
-    },
     Php: {
         title: 'PHP',
         p: 'PHP est un langage de script côté serveur largement utilisé pour le développement Web. Il est principalement utilisé pour générer des pages Web dynamiques et interactives.',
@@ -118,9 +114,24 @@ const imageDetails = {
 };
 
 
+
 const SkillsMenu = () => {
     const [selectedList, setSelectedList] = useState('designer');
     const [selectedImage, setSelectedImage] = useState(null);
+
+    useEffect(() => {
+        gsap.fromTo('.skill-menu', {
+            y: '50%',
+            opacity: 0,
+        },
+        {
+            y: '0%',
+            opacity: 1,
+            duration: 1.3,
+            ease: 'power2.out',
+        });
+        gsap.set('.co-link', { transition: '0.5s' }, '-=0.2');
+    }, []);
 
     // Fonction pour sélectionner la première technologie de chaque catégorie par défaut
     useEffect(() => {
