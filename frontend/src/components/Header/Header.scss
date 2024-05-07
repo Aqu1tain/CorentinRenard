@@ -1,8 +1,81 @@
+@keyframes corentin-word-change {
+    0% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    10% {
+        font-family: "Philosopher";
+    }
+    20% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    30% {
+        font-family: "Racing Sans One";
+    }
+    40% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    50% {
+        font-family: "Quicksand";
+    }
+    60% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    70% {
+        font-family: "Sedan";
+    }
+    80% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    90% {
+        font-family: "Style Script";
+    }
+    100% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+}
+
+@keyframes renard-word-change {
+    0% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    5% {
+        font-family: "Castoro";
+    }
+    15% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    25% {
+        font-family: "Oswald";
+    }
+    35% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    45% {
+        font-family: "Sedan";
+    }
+    55% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    65% {
+        font-family: "Style Script";
+    }
+    75% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+    85% {
+        font-family: "Philosopher";
+    }
+    95% {
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+    }
+}
+
 @font-face {
     font-family: "Outfit";
     src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:wght@400;700&family=Quicksand:wght@300;400;500;600;700&family=Racing+Sans+One&family=Sedan:wght@400;500;600;700&family=Style+Script&family=Castoro&family=Oswald&family=Corentin:wght@400;700&family=Renard:wght@400;700&display=swap');
 
 .header {
     font-family: "Outfit", Arial, Helvetica, sans-serif;
@@ -13,11 +86,20 @@
     align-items: center;
     height: 11vh;
     margin: 0 3%;
+
     h2 {
         margin : 0;
         font-weight: 400;
         a {
             text-decoration: none;
+            &:hover {
+                span#corentin {
+                    animation: corentin-word-change 1500ms steps(7) infinite;
+                }
+                span#renard {
+                    animation: renard-word-change 1500ms steps(7) infinite;
+                }
+            }
         }
     }
     nav {

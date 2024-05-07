@@ -37,3 +37,8 @@
         color: var(--text);
     }
 }
+
+::selection {
+    background-color: var(--textaccent);
+    color: var(--background);
+}
