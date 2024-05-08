@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 import './SkillsMenu.scss';
@@ -119,19 +119,45 @@ const SkillsMenu = () => {
     const [selectedList, setSelectedList] = useState('designer');
     const [selectedImage, setSelectedImage] = useState(null);
 
+    const timeline = useRef(null);
+
     useEffect(() => {
-        gsap.fromTo('.skill-menu', {
-            y: '50%',
+        /* First UseEffect to declare anims and initiate timeline */
+        timeline.current = gsap.timeline({ 
+            paused: true, 
+            defaults: { 
+                duration: 0.5, 
+                ease: 'power1.out' }
+            }
+        )
+        .fromTo('.skill-menu', {
+            y: 20,
             opacity: 0,
+            transform : 'none'
         },
         {
-            y: '0%',
+            y: 0,
             opacity: 1,
-            duration: 1.3,
-            ease: 'power2.out',
+        })
+        .set('.co-link', { transition: '0.5s' });
+        document.querySelectorAll('.choice p').forEach(p => {
+            timeline.current.fromTo(p, {
+                y: 10,
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration:.4,
+            })
         });
-        gsap.set('.co-link', { transition: '0.5s' }, '-=0.2');
+        return () => timeline.current.kill();
     }, []);
+
+    useEffect(() => {
+        /* Second UseEffect to play Timeline */
+        timeline.current.play();
+    }, [])
 
     // Fonction pour sélectionner la première technologie de chaque catégorie par défaut
     useEffect(() => {

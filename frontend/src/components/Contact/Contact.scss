@@ -7,29 +7,7 @@
     position: absolute;
     width: fit-content;
     padding: 40px;
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border: 2px solid var(--textaccent);
-        pointer-events: none;
-    }
-    &:before {
-        right: $frame-padding;
-        left: $frame-padding;
-        border-top: none;
-        border-bottom: none;
-    }
-    &:after {
-        top: $frame-padding;
-        bottom: $frame-padding;
-        border-left: none;
-        border-right: none;
-    }
+    border : 2px solid var(--textaccent);
 }
 
 .contact form {

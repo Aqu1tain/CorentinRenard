@@ -96,31 +96,7 @@
                     height: 20px;
                 }
             }
-        }
-        &::after, &::before {
-            content: "";
-            position: absolute;
-            border: 2px solid var(--textaccent);
-
-            pointer-events: none;
-        }
-        &::before {
-            top: 67px;
-            left: 0;
-            right: 0;
-            bottom: -15px;
-            border-top: none;
-            border-bottom: none;
-        }   
-        &::after {
-            top: 82px;
-            right: -15px;
-            left: -15px;
-            bottom: 0;
-            border-left: none;
-            border-right: none;
-            border-top: none;
-        }           
+        }  
     }
 }
 
