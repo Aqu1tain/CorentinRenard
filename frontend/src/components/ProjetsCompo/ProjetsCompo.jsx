@@ -34,7 +34,8 @@ export default function ProjetsCompo() {
                 { y: 0, opacity: 1 })
                 .fromTo(`.projetscompo .project:nth-child(${index + 1}) .project-title`, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, index * 0.1)
                 .fromTo(`.projetscompo .project:nth-child(${index + 1}) .project-sitetype`, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, index * 0.1)
-                .fromTo(`.projetscompo .project:nth-child(${index + 1}) .CoLink`, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, index * 0.1);
+                .fromTo(`.projetscompo .project:nth-child(${index + 1}) .CoLink`, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, index * 0.1)
+                .set(`.co-link`, { transition: '0.5s' });
         });
         timeline.play(); // Play the timeline
     }, [projects]); // Re-run the effect when the projects change

@@ -1,33 +1,48 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
+const { app, transporter } = require('./middleware');
 const Post = require('./models/Post');
-const nodemailer = require('nodemailer');
+const Skill = require('./models/Skill'); // Import du modèle de compétence
 
-const app = express();
-const transporter = nodemailer.createTransport({
-  host: "sandbox.smtp.mailtrap.io",
-  port: 2525,
-  auth: {
-    user: "3c3c3ab1465883",
-    pass: "07d8567b67c35f"
+
+// Route pour récupérer toutes les compétences
+app.get('/api/skills', async (req, res) => {
+  try {
+      const skills = await Skill.find(); // Récupérer toutes les compétences depuis la base de données
+      res.status(200).json(skills); // Envoyer les compétences au format JSON
+  } catch (err) {
+      res.status(500).json({ message: "Une erreur s'est produite lors de la recherche des skills : " + err.msg });
   }
 });
 
-// Utilisation du middleware CORS pour autoriser les requêtes provenant de tous les domaines
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST']
-}));
+app.post('/api/skills', async (req, res) => {
+  const skill = new Skill(req.body);
+  console.log(req.body);
+  try {
+      await skill.save();
+      res.status(201).json({ message: 'Skill créé avec succès.', skill });
+  } catch (err) {
+      console.log(err);
+      res.status(500).json({ message: 'Erreur lors de la création du skill : ' + err.msg });
+  }
+});
 
+app.delete('/api/skills/:id', async (req, res) => {
+  try {
+      await Skill.findByIdAndDelete(req.params.id);
+      res.status(204).json({ message: 'Skill supprimé avec succès.' });
+  } catch (err) {
+      res.status(500).json({ message: 'Erreur lors de la suppression du skill : ' + err.msg });
+  }
+});
 
-// Connexion à MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/CorentinRenard')
-.then(() => console.log('Connexion à MongoDB réussie'))
-.catch(err => console.error('Erreur de connexion à MongoDB :', err));
+app.put('/api/skills/:id', async (req, res) => {
+  try {
+      const skill = await Skill.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      res.status(200).json({ message: 'Skill mis à jour avec succès.', skill });
+  } catch (err) {
+      res.status(500).json({ message: 'Erreur lors de la mise à jour du skill : ' + err.msg });
+  }
+});
 
-// Middleware pour parser les requêtes au format JSON
-app.use(express.json());
 
 // Route pour créer un nouveau post
 app.post('/api/posts', async (req, res) => {
@@ -96,10 +111,7 @@ app.post('/api/send-email', async (req, res) => {
   }
 })
 
-
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Serveur Express lancé sur le port ${port}`);
 });
-
-
