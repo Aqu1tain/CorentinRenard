@@ -1,17 +1,24 @@
 const { app, transporter } = require('./middleware');
 const Post = require('./models/Post');
 const Skill = require('./models/Skill'); // Import du modèle de compétence
+const express = require('express');
+const path = require('path');
 
+
+app.use('/images', express.static(path.join(__dirname, 'utils', 'images')));
 
 // Route pour récupérer toutes les compétences
 app.get('/api/skills', async (req, res) => {
   try {
       const skills = await Skill.find(); // Récupérer toutes les compétences depuis la base de données
       res.status(200).json(skills); // Envoyer les compétences au format JSON
+      console.log("Requete recue : ", skills);
   } catch (err) {
       res.status(500).json({ message: "Une erreur s'est produite lors de la recherche des skills : " + err.msg });
+      console.log("Requete echouée");
   }
 });
+
 
 app.post('/api/skills', async (req, res) => {
   const skill = new Skill(req.body);

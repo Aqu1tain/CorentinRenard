@@ -2,8 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
+const path = require('path');
 
 const app = express();
+
 const transporter = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
@@ -26,5 +28,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/CorentinRenard')
 
 // Middleware pour parser les requêtes au format JSON
 app.use(express.json());
+
 
 module.exports = { app, transporter };

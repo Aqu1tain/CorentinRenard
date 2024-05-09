@@ -5,11 +5,11 @@ const skillSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    image: {
+    description: {
         type: String,
         required: true
     },
-    description: {
+    imageid: {
         type: String,
         required: true
     },
