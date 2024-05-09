@@ -15,6 +15,7 @@ import Projets from './pages/Projets/Projets';
 import Aboutme from './pages/AboutmePage/Aboutme';
 
 import { ThemeContext } from './theme';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/skills" element ={<Skills />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/projects" element={<Projets />} />

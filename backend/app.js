@@ -7,6 +7,16 @@ const path = require('path');
 
 app.use('/images', express.static(path.join(__dirname, 'utils', 'images')));
 
+app.post('/api/images', (req, res) => {
+  const file = req.files.file;
+  file.mv(path.join(__dirname, 'utils', 'images', file.name), err => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(200).json({ fileName: file.name, filePath: `/images/${file.name}` });
+  })
+});
+
 // Route pour récupérer toutes les compétences
 app.get('/api/skills', async (req, res) => {
   try {
