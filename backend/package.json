@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@adminjs/design-system": "^4.1.1",
     "@adminjs/express": "^6.1.0",
     "@adminjs/mongoose": "^4.1.0",
     "adminjs": "^7.8.1",
@@ -9,7 +10,9 @@
     "mongoose": "^8.4.0",
     "node": "^18.20.2",
     "nodemailer": "^6.9.13",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "name": "backend",
   "version": "1.0.0",

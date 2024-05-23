@@ -28,6 +28,7 @@ const postSchema = new mongoose.Schema({
   },
   author: {
     type: String,
+    //default is current User, see User.js
     required: true
   },
   createdAt: {

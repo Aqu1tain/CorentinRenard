@@ -3,6 +3,7 @@ const path = require('path');
 const { app, transporter } = require('./middleware');
 const Post = require('./models/Post');
 const Skill = require('./models/Skill');
+const User = require('./models/User');
 
 (async () => {
   const AdminJSModule = await import('adminjs');
@@ -17,13 +18,30 @@ const Skill = require('./models/Skill');
 
   AdminJS.registerAdapter(AdminJSMongoose);
 
+
   const adminJs = new AdminJS({
     resources: [
-      { resource: Post, options: {} },
+      { resource: Post, options: {
+        properties: {
+          content: {
+            type: 'richtext',
+          },
+          clientComment: {
+            type: 'richtext',
+          },
+        },
+      } },
       { resource: Skill, options: {} },
+      { resource: User, options: {
+        properties: {
+          password: {
+            type: 'password',
+          },
+        },
+      } },
     ],
     rootPath: '/admin',
-  });
+  }); 
 
   const adminRouter = buildRouter(adminJs);
 
