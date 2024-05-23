@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 
 import './Header.scss';
-import './TitleAnim.scss';
+import './HoverEffects.scss';
 import ModeSwitch from '../ModeSwitch/ModeSwitch';
 
 export default function Header() {

@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20vw;
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
+    h1, h2, h3, p {
+        margin: 5px 0;
+    }
+    #projet-title {
+        font-size: 40px;
+        font-weight: 400;
+    }
+    #projet-sitetype {
+        font-size: 20px;
+        font-weight: 200;
+    }
+    #projet-date {
+        display: none;
+        font-size: 12px;
+        font-weight: 200;
+        color: var(--textaccent);
+    }
+    img {
+        border-radius: 5px;
+        transition: ease-in-out 0.2s;
+        margin: 20px 0;
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}

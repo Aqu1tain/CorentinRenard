@@ -34,6 +34,22 @@ const postSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now
+  },
+  clientName: {
+    type: String,
+    required: false
+  },
+  clientComment: {
+    type: String,
+    required: false
+  },
+  projectLink : {
+    type: String,
+    required: true
   }
 });
 
