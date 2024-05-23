@@ -27,8 +27,7 @@ const postSchema = new mongoose.Schema({
     required: true
   },
   author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Référence au modèle User si besoin
+    type: String,
     required: true
   },
   createdAt: {

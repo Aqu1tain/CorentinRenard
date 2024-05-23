@@ -1,9 +1,12 @@
 {
   "dependencies": {
+    "@adminjs/express": "^6.1.0",
+    "@adminjs/mongoose": "^4.1.0",
+    "adminjs": "^7.8.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
-    "mongoose": "^8.3.1",
+    "mongoose": "^8.4.0",
     "node": "^18.20.2",
     "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0"
