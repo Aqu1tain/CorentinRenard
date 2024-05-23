@@ -6,7 +6,7 @@ Bienvenue dans le repository de corentinrenard.com, un site vitrine développé 
 
 corentinrenard.com est un site web professionnel développé avec les technologies suivantes :
 
-- Backend : Express.js et MongoDB
+- Backend : Express.js, MongoDB et Admin.js
 - Frontend : React.js avec Sass
 
 Le site comprend quatre pages principales :
