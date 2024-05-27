@@ -41,8 +41,8 @@ function Projet() {
                 <h1 id='projet-title'>{title}</h1>
                 <h2 id='projet-sitetype'>{sitetype}</h2>
                 <h3 id='projet-date'>Article créé le {new Date(createdAt).toLocaleDateString("fr-FR", {day: "2-digit", month: "2-digit", year: "numeric"})} à {new Date(createdAt).toLocaleTimeString("fr-FR", {hour: "2-digit"})}</h3>
-                <img id='project-banniere' src={banniereURL} alt={title}></img>
-                <div id="project-content">{content}</div>
+                <a href=""><img id='projet-banniere' src={banniereURL} alt={title}></img></a>
+                <div id="projet-content">{content}</div>
             </div>
         </div>    
     );

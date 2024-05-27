@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import { Schema, model } from 'mongoose';
 
-const postSchema = new mongoose.Schema({
+export const postSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -33,11 +33,11 @@ const postSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: () => new Date()
   },
   updatedAt: {
     type: Date,
-    default: Date.now
+    default: () => new Date()
   },
   clientName: {
     type: String,
@@ -53,4 +53,4 @@ const postSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Post', postSchema);
+export const Post = model('Post', postSchema);

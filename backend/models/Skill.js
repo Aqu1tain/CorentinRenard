@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import { Schema, model } from 'mongoose';
 
-const skillSchema = new mongoose.Schema({
+export const skillSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -29,4 +29,4 @@ const skillSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Skill', skillSchema)
+export const Skill = model('Skill', skillSchema);

@@ -1,23 +1,24 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define the user schema for the Admins collection
-const userSchema = new mongoose.Schema({
+export const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true
+        required: true,
     },
-    password: {
+    encryptedPassword: {
         type: String,
-        required: true
+        required: false,
     },
     email: {
         type: String,
-        required: true
+        required: true,
     },
     isAdmin: {
         type: Boolean,
-        default: false
-    }
+        default: false,
+    },
 });
 
-module.exports = mongoose.model('User', userSchema)
+export const User = mongoose.model('User', userSchema);
+
