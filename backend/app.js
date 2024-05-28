@@ -23,12 +23,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/CorentinRenard')
+mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://corentin-webmaster:L4dg5A3WNxR4x49UrTut5@corentinrenard.1sgdnin.mongodb.net/?retryWrites=true&w=majority&appName=CorentinRenard')
   .then(() => console.log('Connexion à MongoDB réussie'))
   .catch(err => console.error('Erreur de connexion à MongoDB :', err));
 
 const MongoStore = connectMongo.create({
-  mongoUrl: process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/CorentinRenard',
+  mongoUrl: process.env.MONGODB_URL || 'mongodb+srv://corentin-webmaster:L4dg5A3WNxR4x49UrTut5@corentinrenard.1sgdnin.mongodb.net/?retryWrites=true&w=majority&appName=CorentinRenard',
   collection: 'sessions',
 });
 

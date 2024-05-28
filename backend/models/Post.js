@@ -47,6 +47,14 @@ export const postSchema = new Schema({
     type: String,
     required: false
   },
+  clientCommentOrigin: {
+    type: String,
+    required: false
+  },
+  clientName: {
+    type: String,
+    required: false
+  },
   projectLink : {
     type: String,
     required: true
