@@ -3,29 +3,39 @@
     src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
 }
 
+$font-family: "Outfit", Arial, Helvetica, sans-serif;
+$primary-font-size: 20px;
+$large-font-size: 40px;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
 .aboutme-page {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    .about-container {
-        display: flex;
-        justify-content: center;
-        flex: 1;
-        .about-content {
-            font-family: "Outfit", Arial, Helvetica, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width : 65vw;
-            h1 {
-                font-size: 40px;
-                font-weight: 400;
-            }
-            p {
-                font-size: 20px;
-                font-weight: 300;
-                margin: 5px;
-            }
-        }
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.about-content {
+    font-family: $font-family;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65vw;
+
+    h1 {
+        font-size: $large-font-size;
+        font-weight: $font-weight-regular;
+    }
+
+    p {
+        font-size: $primary-font-size;
+        font-weight: $font-weight-light;
+        margin: 5px;
     }
 }
