@@ -13,7 +13,7 @@ export default function Header() {
             <h2><Link to="/"><span id='corentin'>Corentin</span> <span id='renard'>Renard</span></Link></h2>
             <nav>
                 <ul>                    
-                    <li><Link to="/skills">Compétences</Link></li>
+                    <li><Link to="/about">A propos de moi</Link></li>
                     <li><Link to="/projects">Projets</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>

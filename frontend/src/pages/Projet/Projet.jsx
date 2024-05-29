@@ -49,20 +49,26 @@ function Projet() {
         <div className='projet-page'>
             <Header />
             <div className='page-content'>
-                <h1 id='projet-title'>{project.title}</h1>
-                <h2 id='projet-sitetype'>{project.sitetype}</h2>
-                <h3 id='projet-date'>Article créé le {new Date(project.createdAt).toLocaleDateString("fr-FR", {day: "2-digit", month: "2-digit", year: "numeric"})} à {new Date(project.createdAt).toLocaleTimeString("fr-FR", {hour: "2-digit"})}</h3>
-                <a href={project.projectLink} target='_blank' rel='noopener noreferrer'>
-                    <img id='projet-banniere' src={project.banniereURL} alt={project.title}></img>
-                </a>
-                <p id="projet-content" dangerouslySetInnerHTML={{ __html: project.content }}></p>
-                {project.clientCom && (
-                    <ClientComment 
-                        clientCom={project.clientCom} 
-                        clientCommentOrigin={project.clientCommentOrigin} 
-                        interlocuterName={project.interlocuterName} 
-                    />
-                )}
+                <div className='projet-side'>
+                    <a href={project.projectLink} target='_blank' rel='noopener noreferrer'>
+                        <img id='projet-banniere' src={project.banniereURL} alt={project.title}></img>
+                    </a>
+                </div>
+                <div className='projet-side2'>
+                    <h1 id='projet-title'>{project.title}</h1>
+                    <h2 id='projet-sitetype'>{project.sitetype}</h2>
+                    <h3 id='projet-date'>Article créé le {new Date(project.createdAt).toLocaleDateString("fr-FR", {day: "2-digit", month: "2-digit", year: "numeric"})} à {new Date(project.createdAt).toLocaleTimeString("fr-FR", {hour: "2-digit"})}</h3>
+                    
+                    <p id="projet-content" dangerouslySetInnerHTML={{ __html: project.content }}></p>
+                    {project.clientCom && (
+                        <ClientComment 
+                            clientCom={project.clientCom} 
+                            clientCommentOrigin={project.clientCommentOrigin} 
+                            interlocuterName={project.interlocuterName} 
+                        />
+                    )}
+                </div>
+                
             </div>
         </div>
     );

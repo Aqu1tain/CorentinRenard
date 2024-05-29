@@ -51,7 +51,7 @@ export const postSchema = new Schema({
     type: String,
     required: false
   },
-  clientName: {
+  interlocuterName: {
     type: String,
     required: false
   },

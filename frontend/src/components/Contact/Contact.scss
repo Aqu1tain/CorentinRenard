@@ -8,6 +8,8 @@
     width: fit-content;
     padding: 40px;
     border : 2px solid var(--textaccent);
+    top: 50%;
+    transform: translate(0, -46%);
 }
 
 .contact form {

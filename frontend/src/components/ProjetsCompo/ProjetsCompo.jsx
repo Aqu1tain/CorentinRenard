@@ -52,9 +52,7 @@ export default function ProjetsCompo() {
                 <div key={project._id} className="project">
                     <h2 className="project-title">{project.title}</h2>
                     <p className="project-sitetype">{project.sitetype}</p>
-                    <CoLink
-                        to={"projects/" + project.textid}
-                        target={"_blank"}>
+                    <CoLink to={"projects/" + project.textid}>
                         En savoir plus
                     </CoLink>
                     <img 
