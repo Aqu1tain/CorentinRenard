@@ -3,6 +3,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import ClientComment from '../../components/ClientComment/ClientComment'; // Nouveau composant pour les commentaires
 
+import Prism from "prismjs";
+import "prismjs/themes/prism-okaidia.css";
+
+
 import './Projet.scss';
 
 function Projet() {
@@ -19,8 +23,9 @@ function Projet() {
     });
     const { Handle } = useParams();
     const redirect = useNavigate();
+    
     console.log("Handle :" + Handle);
-
+    
     useEffect(() => {
         fetch('http://localhost:3001/api/posts')
             .then(response => response.json())
@@ -44,6 +49,10 @@ function Projet() {
             })
             .catch(error => console.error('Error fetching project:', error));
     }, [Handle]);
+
+    useEffect(() => {
+        Prism.highlightAll();
+    }, [project]);
 
     return (
         <div className='projet-page'>
