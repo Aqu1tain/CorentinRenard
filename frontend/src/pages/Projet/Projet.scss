@@ -25,25 +25,33 @@ p, div {
 }
 
 .projet-side {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 6vw;
+    right: 50vw;
     flex: 12;
-
-    #projet-banniere {
-        border-radius: 5px;
-        transition: ease-in-out 0.2s;
-        margin: 20px 0;
-        width: 40%;
-        top: 50%;
-        transform: translate(0, -50%);
-        position: fixed;
-
-        &:hover {
-            transform: translate(0, -50%) scale(1.02);
+    height: 73vh;
+    justify-content: center;
+    align-items: center;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #projet-banniere {
+            border-radius: 5px;
+            transition: ease-in-out 0.2s;
+            width: 85%;
+            &:hover {
+                transform: scale(1.02);
+            }
         }
     }
 }
 
 .projet-side2 {
-    flex: 10;
+    flex: 10 1;
+    margin-left: 50%;
 
     h1, h2, h3 {
         margin: 5px 0;
