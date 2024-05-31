@@ -13,7 +13,7 @@
 
     span {
         font-family: "Outfit";
-        font-size: 24px;
+        font-size: 1.2em;
         font-style: normal;
         font-weight: 300;
         line-height: normal;
@@ -32,3 +32,9 @@
         }
     }
 } 
+
+@media screen and (max-width : 865px) {
+    .co-link span {
+        font-size: 1.4em;
+    }    
+}

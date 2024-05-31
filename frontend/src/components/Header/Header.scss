@@ -84,11 +84,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 11vh;
-    left: 50%;
     top: 0;
-    transform: translateX(-50%);
-    width: 94vw;
+    width: 95vw;
+    padding: 2.5vw;
     background-color: var(--background);
 
     h2 {
@@ -96,6 +94,9 @@
         font-weight: 400;
         a {
             text-decoration: none;
+            display: inline-flex;
+            width: fit-content;
+            gap : 5px;
             &:hover {
                 span#corentin {
                     animation: corentin-word-change 1500ms steps(7) infinite;
@@ -137,4 +138,70 @@
 a#active {
     text-decoration: underline var(--text) 1px;
     text-underline-offset: 3px;
+}
+
+@media screen and (max-width: 865px) {
+    .header {
+        width: 90vw;
+        padding: 5vw;
+        flex-direction: row-reverse;
+        h2 {
+            display: none;
+        }
+    }
+    #nav-desktop {
+        display: none;
+    }
+    #nav-mobile {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+
+        #menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        .McButton {
+            &.active + ul#menu{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                background-color: var(--background);
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                padding: 10vh 0;
+                gap: 4vh;
+                li {
+                    padding: 0;
+                    margin : 0;
+                    width: fit-content;
+                    a {
+                        padding: 0;
+                        margin: 0;
+                        width: fit-content;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 865px) {
+    #nav-desktop {
+        display: inline-flex;
+    }
+    #nav-mobile {
+        display: none;
+    }
 }

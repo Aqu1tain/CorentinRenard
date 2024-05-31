@@ -4,9 +4,11 @@
 }
 
 $font-family: "Outfit", Arial, Helvetica, sans-serif;
-$greeting-font-size: 24px;
-$name-font-size: 65px;
-$description-font-size: 24px;
+$greeting-font-size: clamp(20px, 1.8vw, 30px);
+$name-font-size: clamp(28px, 5vw, 65px);
+$description-font-size: clamp(18px, 1.2vw, 26px);
+
+
 
 .welcome {
     display: flex;
@@ -19,13 +21,12 @@ $description-font-size: 24px;
 
 .presentation {
     position: relative;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80vh;
     width: 65vw;
     font-family: $font-family;
+    
 
     &__greeting {
         margin: 0;
@@ -44,6 +45,7 @@ $description-font-size: 24px;
         font-size: $description-font-size;
         font-weight: 200;
         font-style: normal;
+        line-height: 1.5em;
     }
 
     &__link {
@@ -52,5 +54,43 @@ $description-font-size: 24px;
 
     &__socials {
         margin-top: 20px;
+    }
+}
+
+@media screen and (max-width : 865px) {
+    .welcome {
+        margin-top: 0;
+    }
+    .presentation {
+        justify-content: flex-start;
+        gap: 10px;
+        width: 88vw;
+        &__name {
+            font-size: 3em;
+            margin-bottom: 7px;
+        }
+        &__greeting {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 300;
+        }
+        &__description {
+            font-size: 1.2em;
+            /*Improve gap between lines*/
+            line-height: 1.8
+        }
+        .socials {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 90vw;
+            padding: 5vw;
+            justify-content: space-between;
+            align-items: center;
+            a img {
+                width: 30px;
+                height: 30px;
+            }
+        }
     }
 }

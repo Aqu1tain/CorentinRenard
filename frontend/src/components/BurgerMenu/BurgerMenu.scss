@@ -1,0 +1,49 @@
+$bar-w: 30px;
+$bar-h: 3px;
+$bar-color: var(--text);
+
+.McButton {
+    position: relative;
+    z-index: 10;
+    width: $bar-w;
+    height: ($bar-w * 3) / 4;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+
+    b {
+        position: absolute;
+        left: 0;
+        width: $bar-w;
+        height: $bar-h;
+        background-color: $bar-color;
+        transition: all 0.3s ease;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:nth-child(3) {
+            top: 100%;
+            transform: translateY(-100%);
+        }
+    }
+
+    &.active {
+        b:nth-child(1) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        b:nth-child(2) {
+            opacity: 0;
+        }
+        b:nth-child(3) {
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+}
