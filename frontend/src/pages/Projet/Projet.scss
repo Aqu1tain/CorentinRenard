@@ -53,6 +53,10 @@ p, div {
     flex: 10 1;
     margin-left: 50%;
     max-width: 50%;
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap : 20px;
 
     h1, h2, h3 {
         margin: 5px 0;
@@ -91,8 +95,7 @@ p, div {
             gap: 20px;
 
             #client-logo {
-                width: 8%;
-                height: 8%;
+                width: 80px; height : 80px;
                 border-radius: 5px;
             }
         }
@@ -119,11 +122,15 @@ p, div {
         .projet-side2 {
             display: flex;
             flex-direction: column;
-            line-height: 1.8em;
             gap: 30px;
+            line-height: 1.8em;
+
         }
         #projet-banniere {
             width: 100% !important;
+        }
+        #client-logo {
+            width: 8%;
         }
     }
 }
