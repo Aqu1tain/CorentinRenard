@@ -6,9 +6,9 @@
 $font-family: "Outfit", Arial, Helvetica, sans-serif;
 $primary-color: #3498db;
 $secondary-color: #2ecc71;
-$font-size-large: 40px;
-$font-size-medium: 20px;
-$font-size-small: 12px;
+$font-size-large: clamp(30px, 3vw, 50px);
+$font-size-medium: clamp(14px, 1.2vw, 26px);
+$font-size-small: clamp(8px, .8vw, 15px);
 
 p, div {
     margin: 0;
@@ -79,6 +79,10 @@ p, div {
         color: var(--textaccent);
     }
 
+    #projet-content {
+        display: contents;
+    }
+
     .projet-comment {
         display: flex;
         flex-direction: column;
@@ -88,7 +92,7 @@ p, div {
             font-weight: 300;
         }
 
-        .projet-content {
+        .projet-inner {
             width: 100%;
             display: flex;
             flex-direction: row;

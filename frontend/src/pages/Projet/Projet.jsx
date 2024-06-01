@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import ClientComment from '../../components/ClientComment/ClientComment'; 
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
+import DocumentMeta from 'react-document-meta';
 import './Projet.scss';
 
 function Projet() {
@@ -12,6 +13,7 @@ function Projet() {
         sitetype: "",
         content: "",
         createdAt: "",
+        description: "",
         banniereURL: "",
         projectLink: "",
         clientCom: "",
@@ -36,6 +38,7 @@ function Projet() {
                             createdAt: project.createdAt,
                             banniereURL: project.imageUrl,
                             projectLink: project.projectLink,
+                            description: project.description,
                             clientCom: project.clientComment,
                             clientCommentOrigin: project.clientCommentOrigin,
                             interlocuterName: project.interlocuterName,
@@ -50,15 +53,37 @@ function Projet() {
         return () => {
             isMounted = false;
         };
-    }, [Handle]);
+    }, [Handle, redirect]);
 
     useEffect(() => {
         Prism.highlightAll();
     }, [project]);
 
+    const meta = {
+        title: project.title,
+        description: project.description,
+        canonical: `https://corentinrenard.com/projects/${project.title}`,
+        meta: {
+            charset: "utf-8",
+            name: {
+                keywords: "projet, corentin, renard, portfolio, corentin renard, corentinrenard, corentinrenard.com",
+            },
+            property: {
+                'og:title': project.title,
+                'og:description': project.description,
+                'og:url': `https://corentinrenard.com/projects/${project.title}`,
+                'og:image': project.banniereURL,
+                'og:type': 'article',
+                'og:locale': 'fr_FR',
+                'twitter:card': 'summary_large_image',
+            },
+        },
+    }
+    
     return (
         <div className='projet-page'>
             <Header />
+            <DocumentMeta {...meta} />
             <div className='page-content'>
                 <ProjectSide project={project} />
                 <ProjectDetails project={project} />
@@ -76,7 +101,7 @@ const ProjectSide = ({ project }) => (
 );
 
 const ProjectDetails = ({ project }) => (
-    <div className='projet-side2'>
+    <article className='projet-side2'>
         <h1 id='projet-title'>{project.title}</h1>
         <h2 id='projet-sitetype'>{project.sitetype}</h2>
         <h3 id='projet-date'>Article créé le {new Date(project.createdAt).toLocaleDateString("fr-FR", {day: "2-digit", month: "2-digit", year: "numeric"})} à {new Date(project.createdAt).toLocaleTimeString("fr-FR", {hour: "2-digit"})}</h3>
@@ -89,7 +114,7 @@ const ProjectDetails = ({ project }) => (
                 interlocuterName={project.interlocuterName} 
             />
         )}
-    </div>
+    </article>
 );
 
 export default Projet;

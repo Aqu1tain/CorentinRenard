@@ -5,7 +5,7 @@
 .contact {
     $frame-padding : 15px;
     position: absolute;
-    width: fit-content;
+    width: 25vw;
     padding: 40px;
     border : 2px solid var(--textaccent);
     top: 55%;
@@ -21,7 +21,7 @@
     flex-direction: column;
     max-width: 520px;
     
-    width: 25vw;
+    width: 100%;
 
     .input-field {
         position: relative;
@@ -91,3 +91,19 @@
     margin-top: 5px;
 }
 
+@media screen and (max-width : 1075px) {
+    .contact {
+        border: none;
+        width: 50vw;
+        overflow: visible;
+        .message textarea {
+            height: 100px !important;
+        }
+    }
+}
+
+@media screen and (max-width : 550px) {
+    .contact {
+        width: 75vw;
+    }
+}

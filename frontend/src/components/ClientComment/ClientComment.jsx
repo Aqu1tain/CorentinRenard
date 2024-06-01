@@ -1,7 +1,7 @@
 const ClientComment = ({ clientCom, clientCommentOrigin, interlocuterName }) => (
     <div className='projet-comment'>
         <h3>Commentaire du Client</h3>
-        <div className='projet-content'>
+        <div className='projet-inner'>
             {clientCommentOrigin === "Gens de Confiance" ? 
             <img id="client-logo" src="https://tp.gensdeconfiance.com/newId/gensdeconfiance/logo_1024.png?twic=v1" alt="Logo Gens de Confiance" />
             :

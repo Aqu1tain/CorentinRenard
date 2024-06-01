@@ -4,7 +4,7 @@
 }
 
 $font-family: "Outfit", Arial, Helvetica, sans-serif;
-$primary-font-size: 50px;
+$primary-font-size: clamp(30px, 3vw, 50px);
 $font-weight-medium: 500;
 
 .projets-page {

@@ -4,21 +4,22 @@
 }
 
 $font-family: "Outfit", Arial, Helvetica, sans-serif;
-$primary-font-size: 20px;
-$large-font-size: 40px;
+$primary-font-size: clamp(14px, 1.2vw, 26px);
+$large-font-size: clamp(30px, 3vw, 50px);
 $font-weight-regular: 400;
 $font-weight-light: 300;
 
 .aboutme-page {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .about-container {
     display: flex;
     justify-content: center;
-    flex: 1;
+    flex: 1 1;
+    margin-top: 10vh;
 }
 
 .about-content {
@@ -27,6 +28,7 @@ $font-weight-light: 300;
     flex-direction: column;
     justify-content: center;
     width: 65vw;
+    line-height: 1.5em;
 
     h1 {
         font-size: $large-font-size;
@@ -37,5 +39,17 @@ $font-weight-light: 300;
         font-size: $primary-font-size;
         font-weight: $font-weight-light;
         margin: 5px;
+    }
+}
+
+@media screen and (max-width : 865px) {
+    .about-content {
+        margin-top: 14vh;
+        width: 88vw;
+        line-height: 1.6em;
+    }
+    .aboutme-page {
+        margin: 10vh 0;
+        margin-top: auto;
     }
 }
