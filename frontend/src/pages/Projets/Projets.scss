@@ -11,6 +11,7 @@ $font-weight-medium: 500;
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 18vh;
 }
 
 .projets-container {
@@ -18,11 +19,18 @@ $font-weight-medium: 500;
     flex-direction: column;
     justify-content: center;
     width: 65vw;
-    height: 80vh;
+    min-height: 80vh;
 
     .projets-title {
         font-size: $primary-font-size;
         font-weight: $font-weight-medium;
         font-family: $font-family;
     }
+}
+
+@media screen and (max-width: 600px) {
+    .projets-container {
+        width: 90vw;
+    }
+    
 }
