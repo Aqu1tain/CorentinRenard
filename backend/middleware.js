@@ -13,10 +13,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Utilisation du middleware CORS pour autoriser les requêtes provenant de tous les domaines
+// Utilisation du middleware CORS pour autoriser les requêtes provenant de localhost:3000
 app.use(cors({
-  origin: '*',
+  origin: 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,  // Si vous utilisez des cookies, JWT, ou d'autres mécanismes d'authentification
 }));
 
 // Middleware pour parser les requêtes au format JSON

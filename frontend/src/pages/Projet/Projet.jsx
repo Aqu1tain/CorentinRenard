@@ -7,6 +7,8 @@ import "prismjs/themes/prism-okaidia.css";
 import DocumentMeta from 'react-document-meta';
 import './Projet.scss';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 function Projet() {
     const [project, setProject] = useState({
         title: "",
@@ -25,8 +27,13 @@ function Projet() {
     
     useEffect(() => {
         let isMounted = true;
-        fetch('http://localhost:3001/api/posts')
-            .then(response => response.json())
+        fetch(`${apiUrl}/api/posts`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(projects => {
                 if (isMounted) {
                     const project = projects.find(p => p.textid === Handle);
@@ -48,7 +55,14 @@ function Projet() {
                     }
                 }
             })
-            .catch(error => console.error('Error fetching project:', error));
+            .catch(error => {
+                if (error.name === 'SyntaxError' && error.message.includes('Unexpected token')) {
+                    console.error('Error fetching project: SyntaxError: Unexpected token', error.message);
+                } else {
+                    console.error('Error fetching project:', error);
+                }
+            });
+
         
         return () => {
             isMounted = false;

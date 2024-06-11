@@ -3,12 +3,14 @@ import CoLink from '../CoLink/CoLink';
 import { gsap } from 'gsap'; // GSAP: GreenSock Animation Platform
 import './ProjetsCompo.scss';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export default function ProjetsCompo() {
     const [projects, setProjects] = useState([]); // Store the projects in state
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 }); // Store the mouse position
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/posts') // Fetch the projects from the API
+        fetch(`${apiUrl}/api/posts`) // Fetch the projects from the API
             .then(response => response.json()) // Parse the response as JSON
             .then(data => setProjects(data)); // Store the projects in state
     }, []); // Run the effect only once, on mount
