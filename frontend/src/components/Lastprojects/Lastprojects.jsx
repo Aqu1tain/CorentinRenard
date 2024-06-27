@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react'; // Import the useState and u
 import './Lastprojects.scss';
 import Button from '../Button/Button';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 // This component will display the latest projects on the homepage
 export default function Lastprojects() {
     const [projects, setProjects] = useState([]); // Store the projects in state
 
     // Fetch the projects from the API on mount
     useEffect(() => {
-        fetch('http://localhost:3001/api/posts') // Fetch the projects from the API
+        fetch(`${apiUrl}/api/posts`) // Fetch the projects from the API
             .then(response => response.json()) // Parse the response as JSON
             .then(data => setProjects(data)); // Store the projects in state
     }, []); // Run the effect only once, on mount
@@ -30,4 +32,3 @@ export default function Lastprojects() {
         </div>
     );
 }
-
