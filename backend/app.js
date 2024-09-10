@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcrypt';
-import session from 'express-session';
 import connectMongo from 'connect-mongo';
 import AdminJS from 'adminjs';
 import * as AdminJSExpress from '@adminjs/express';
@@ -12,6 +11,7 @@ import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import fileUpload from 'express-fileupload';
+import cors from 'cors';
 
 import { transporter } from './middleware.js';
 import { Post } from './models/Post.js';
@@ -133,6 +133,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(adminJs.options.rootPath, adminRouter);
+
+// Utilisation du middleware CORS pour autoriser les requêtes provenant de localhost:3000
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,  // Si vous utilisez des cookies, JWT, ou d'autres mécanismes d'authentification
+}));
 
 // Image upload endpoint
 app.post('/api/images', (req, res) => {

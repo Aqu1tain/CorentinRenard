@@ -1,5 +1,4 @@
 import express from 'express';
-import cors from 'cors';
 import nodemailer from 'nodemailer';
 
 const app = express();
@@ -12,13 +11,6 @@ const transporter = nodemailer.createTransport({
     pass: '07d8567b67c35f',
   },
 });
-
-// Utilisation du middleware CORS pour autoriser les requêtes provenant de localhost:3000
-app.use(cors({
-  origin: 'http://localhost:3000',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,  // Si vous utilisez des cookies, JWT, ou d'autres mécanismes d'authentification
-}));
 
 // Middleware pour parser les requêtes au format JSON
 app.use(express.json());
